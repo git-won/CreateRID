@@ -1,9 +1,26 @@
 * { padding: 0; margin: 0; } 
-body { padding: 14px; } 
 ul, ol { list-style: none; }
+header {
+  background-color: #eee;
+  height: 100px;
+  position: relative;
+}
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translateX(-50%);
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+
+}
 .alignCon {
+  padding-top: 40px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 16px;
 } 
 #typeOfNumber { width: 60px; height: 30px; outline: 1px solid #333;text-align: center; position: relative; line-height: 30px; box-sizing: border-box; margin-right: 10px; cursor: pointer;} 
@@ -18,5 +35,12 @@ ul, ol { list-style: none; }
 #typeOfNumber ul .option:last-child { border-bottom: 0; } 
 
 #createBtn { padding: 5px 12px; } 
-#output { font-size: 18px; }
-
+#output { font-size: 18px; text-align: center;}
+footer {
+  height: 80px;
+  width: 100%;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
