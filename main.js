@@ -23,7 +23,7 @@ options.forEach((option) => {
     selectedNum = Number(option.innerHTML);
   });
 });
-/* 배열 */
+/* 배열예시 */
 const nameList = [
   "가나다라마",
   "바사아",
@@ -120,3 +120,16 @@ createBtn.addEventListener("click", () => {
     output.innerHTML = result;
   }
 });
+
+const pickItems = document.querySelector(".pick-items");
+let pickItemLength = '' 
+output.addEventListener('click', () => { 
+  if (pickItemLength < 10) {
+    pickItems.innerHTML += `<li class="pick-item">${this.output.innerHTML}</li>`;
+    let pickItem = document.querySelectorAll(".pick-item");
+    console.log(pickItems);
+    console.log(pickItem);
+    pickItemLength = pickItem.length;
+    console.log(pickItem.length);
+   }
+})
