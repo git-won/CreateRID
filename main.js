@@ -24,7 +24,7 @@ options.forEach((option) => {
   });
 });
 /* 배열예시 */
-const nameList = [
+/* const nameList = [
   "가나다라마",
   "바사아",
   "자차카타파하",
@@ -38,7 +38,20 @@ const nameList = [
   "안녕",
   "킥킥",
   "탕탕",
-];
+]; */
+let nameList = []; // 배열로 초기화
+const filePath = "./maplenpcmob.json"; // 파일 경로는 적절히 수정해야 합니다.
+
+fetch(filePath)
+  .then((response) => response.json())
+  .then((data) => {
+    for (let i = 0; i < data.length; i++) {
+      console.log(data[i]);
+      nameList.push(data[i].value); // 데이터 값을 배열에 push
+      console.log(nameList);
+    }
+  })
+  .catch((error) => console.error("Error:", error));
 /* 소스 */
 const listCount = nameList.length;
 const listNum = Array(listCount).fill("[]");
