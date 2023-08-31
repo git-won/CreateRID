@@ -24,8 +24,8 @@ header {
  margin-bottom: 16px; 
  } 
 #typeOfNumber { text-align: center; margin-right: 10px; cursor: pointer; } 
-#typeOfNumber .opt-wrap { width: 100%; display: flex; align-items: center; justify-content: space-between;} 
-#typeOfNumber .opt-wrap .option { border: 1px solid #333; box-sizing: border-box; cursor: pointer; width: 30px; height: 30px; line-height: 30px; margin-right: 10px;} 
+#typeOfNumber .opt-wrap { width: 100%; display: flex; align-items: center; justify-content: space-between; } 
+#typeOfNumber .opt-wrap .option { border: 1px solid #333; box-sizing: border-box; cursor: pointer; width: 30px; height: 30px; line-height: 30px; margin-right: 10px; } 
 #typeOfNumber .opt-wrap .option:hover { 
  background-color: #333; 
  color: #fff; 
@@ -33,6 +33,7 @@ header {
  } 
 
 #createBtn { padding: 5px 12px; } 
+#searchInGg { padding: 5px 12px; } 
 #output { font-size: 24px; text-align: center; border: 1px solid orange; box-sizing: border-box; width: 50%; margin: 0 auto; height: 40px; line-height: 40px; margin-bottom: 10px; } 
 .pick { 
  outline: 1px solid orangered; 

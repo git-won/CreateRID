@@ -6,17 +6,13 @@ let selectedNum = "";
 options.forEach((option) => {
   option.addEventListener("click", (e) => {
     e.stopPropagation();
-
-    // 선택된 옵션의 부모 요소를 가져옵니다.
     const optionParent = option.parentElement;
 
-    // 부모 요소의 모든 자식 옵션들을 찾아서 색상을 변경합니다.
     Array.from(optionParent.children).forEach((siblingOption) => {
       siblingOption.style.color = "#333";
       siblingOption.style.backgroundColor = "#fff";
     });
 
-    // 선택된 옵션의 색상을 변경하고 slideCount와 selectedNum을 업데이트합니다.
     option.style.color = "#fff";
     option.style.backgroundColor = "#333";
     slideCount = 0;
@@ -26,22 +22,22 @@ options.forEach((option) => {
 
 //json에서 가져오기
 let nameList = []; // 배열로 초기화
-const filePath = "src/data/data.json"; // 파일 경로는 적절히 수정해야 합니다.
+const filePath = "src/data/data.json";
 fetch(filePath)
   .then((response) => response.json())
   .then((data) => {
     for (let i = 0; i < data.length; i++) {
-      nameList.push(data[i].value); // 데이터 값을 배열에 push
+      nameList.push(data[i].value);
     }
   })
   .catch((error) => console.error("Error:", error));
-
 
 /* 소스 */
 const listCount = nameList.length;
 const listNum = Array(listCount).fill("[]");
 const output = document.querySelector("#output");
 const createBtn = document.querySelector("#createBtn");
+let result =""
 createBtn.addEventListener("click", () => {
   if (selectedNum === 2) {
     //console.log(selectedNum);
@@ -56,7 +52,7 @@ createBtn.addEventListener("click", () => {
       .join("");
     /* 배열에서 첫번째 글자 삭제 */
     let filtered = nameListCopy.filter((element) => element !== FirstName);
-    let result = `${firstResult}`;
+    result = `${firstResult}`;
     let ranNum02 = Math.floor(Math.random() * filtered.length);
     let secondName = filtered[ranNum02];
     //console.log(`secondName : ${secondName}`);
@@ -90,7 +86,7 @@ createBtn.addEventListener("click", () => {
     //console.log(`firstResultLength : ${firstResultLength}`);
     let reqNum = selectedNum - firstResultLength;
     //console.log(`reqNum : ${reqNum}`);
-    let result = `${firstResult}`;
+    result = `${firstResult}`;
     //console.log(filtered);
     /* 2 */
     let ranNum02 = Math.floor(Math.random() * filtered.length);
@@ -116,6 +112,13 @@ createBtn.addEventListener("click", () => {
       //console.log(result.length);
     }
     output.innerHTML = result;
+  }
+});
+
+const searchInGg = document.querySelector("#searchInGg");
+searchInGg.addEventListener("click", () => {
+  if (result) { 
+    window.location.href = `https://maple.gg/u/${result}`;
   }
 });
 
