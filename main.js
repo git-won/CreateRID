@@ -1,32 +1,32 @@
-/* import nameList from "./data.js"; */
-
 const typeOfNumber = document.querySelector("#typeOfNumber");
-const selected = document.querySelector("#selected");
+//const selected = document.querySelector("#selected");
 const optionWrap = document.querySelector(".opt-wrap");
 const options = document.querySelectorAll("#typeOfNumber ul .option");
 let selectedNum = "";
-let slideCount = 0;
-typeOfNumber.addEventListener("click", () => {
-  if (slideCount === 0) {
-    optionWrap.style.display = "block";
-    slideCount = 1;
-  } else {
-    optionWrap.style.display = "none";
-    slideCount = 0;
-  }
-});
 options.forEach((option) => {
   option.addEventListener("click", (e) => {
     e.stopPropagation();
+
+    // 선택된 옵션의 부모 요소를 가져옵니다.
+    const optionParent = option.parentElement;
+
+    // 부모 요소의 모든 자식 옵션들을 찾아서 색상을 변경합니다.
+    Array.from(optionParent.children).forEach((siblingOption) => {
+      siblingOption.style.color = "#333";
+      siblingOption.style.backgroundColor = "#fff";
+    });
+
+    // 선택된 옵션의 색상을 변경하고 slideCount와 selectedNum을 업데이트합니다.
+    option.style.color = "#fff";
+    option.style.backgroundColor = "#333";
     slideCount = 0;
-    optionWrap.style.display = "none";
-    selected.innerHTML = option.innerHTML;
     selectedNum = Number(option.innerHTML);
   });
 });
+
 //json에서 가져오기
 let nameList = []; // 배열로 초기화
-const filePath = "./data.json"; // 파일 경로는 적절히 수정해야 합니다.
+const filePath = "src/data/data.json"; // 파일 경로는 적절히 수정해야 합니다.
 fetch(filePath)
   .then((response) => response.json())
   .then((data) => {
