@@ -1,4 +1,4 @@
-import nameList from './data'
+/* import nameList from "./data.js"; */
 
 const typeOfNumber = document.querySelector("#typeOfNumber");
 const selected = document.querySelector("#selected");
@@ -25,19 +25,17 @@ options.forEach((option) => {
   });
 });
 //json에서 가져오기
-/* let nameList = []; // 배열로 초기화
+let nameList = []; // 배열로 초기화
 const filePath = "./data.json"; // 파일 경로는 적절히 수정해야 합니다.
 fetch(filePath)
   .then((response) => response.json())
   .then((data) => {
     for (let i = 0; i < data.length; i++) {
-      console.log(data[i]);
       nameList.push(data[i].value); // 데이터 값을 배열에 push
-      console.log(nameList);
     }
   })
   .catch((error) => console.error("Error:", error));
- */
+
 
 /* 소스 */
 const listCount = nameList.length;
@@ -122,8 +120,8 @@ createBtn.addEventListener("click", () => {
 });
 
 const pickItems = document.querySelector(".pick-items");
-let pickItemLength = '' 
-output.addEventListener('click', () => { 
+let pickItemLength = "";
+output.addEventListener("click", () => {
   if (pickItemLength < 10) {
     pickItems.innerHTML += `<li class="pick-item">${this.output.innerHTML}</li>`;
     let pickItem = document.querySelectorAll(".pick-item");
@@ -131,5 +129,5 @@ output.addEventListener('click', () => {
     console.log(pickItem);
     pickItemLength = pickItem.length;
     console.log(pickItem.length);
-   }
-})
+  }
+});
