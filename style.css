@@ -25,7 +25,17 @@ header {
  } 
 #typeOfNumber { text-align: center; margin-right: 10px; cursor: pointer; } 
 #typeOfNumber .opt-wrap { width: 100%; display: flex; align-items: center; justify-content: space-between; } 
-#typeOfNumber .opt-wrap .option { border: 1px solid #333; box-sizing: border-box; cursor: pointer; width: 30px; height: 30px; line-height: 30px; margin-right: 10px; } 
+#typeOfNumber .opt-wrap .option {  box-sizing: border-box; cursor: pointer; width: 30px; height: 30px; line-height: 30px; margin-right: 10px; } 
+#typeOfNumber .opt-wrap .option#opt2 {
+  font-size: 0;
+  background-image: url(src/images/btn2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+#typeOfNumber .opt-wrap .option#opt2.active {
+  background-image: url(src/images/btn2_active.png);
+}
 #typeOfNumber .opt-wrap .option:hover { 
  background-color: #333; 
  color: #fff; 

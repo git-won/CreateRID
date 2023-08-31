@@ -9,13 +9,10 @@ options.forEach((option) => {
     const optionParent = option.parentElement;
 
     Array.from(optionParent.children).forEach((siblingOption) => {
-      siblingOption.style.color = "#333";
-      siblingOption.style.backgroundColor = "#fff";
+      siblingOption.classList.remove("active");
     });
 
-    option.style.color = "#fff";
-    option.style.backgroundColor = "#333";
-    slideCount = 0;
+    option.classList.add("active");
     selectedNum = Number(option.innerHTML);
   });
 });
