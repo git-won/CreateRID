@@ -117,8 +117,14 @@ createBtn.addEventListener("click", () => {
 
 const searchInGg = document.querySelector("#searchInGg");
 searchInGg.addEventListener("click", () => {
-  if (result) { 
+  /* if (result) { 
     window.location.href = `https://maple.gg/u/${result}`;
+  } */
+  if (result) {
+    const newWindow = window.open(`https://maple.gg/u/${result}`, "_blank");
+    if (newWindow) {
+      newWindow.focus();
+    }
   }
 });
 
