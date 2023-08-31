@@ -23,24 +23,8 @@ options.forEach((option) => {
     selectedNum = Number(option.innerHTML);
   });
 });
-/* 배열예시 */
-/* const nameList = [
-  "가나다라마",
-  "바사아",
-  "자차카타파하",
-  "ABCDEFG",
-  "HIJK",
-  "LMNOP",
-  "QRS",
-  "TUVWXYZ",
-  "공일이삼사오육칠",
-  "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋ",
-  "안녕",
-  "킥킥",
-  "탕탕",
-]; */
 let nameList = []; // 배열로 초기화
-const filePath = "./maplenpcmob.json"; // 파일 경로는 적절히 수정해야 합니다.
+const filePath = "./data.json"; // 파일 경로는 적절히 수정해야 합니다.
 
 fetch(filePath)
   .then((response) => response.json())
