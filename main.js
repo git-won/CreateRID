@@ -1,4 +1,5 @@
-/* select */
+import nameList from './data'
+
 const typeOfNumber = document.querySelector("#typeOfNumber");
 const selected = document.querySelector("#selected");
 const optionWrap = document.querySelector(".opt-wrap");
@@ -23,9 +24,9 @@ options.forEach((option) => {
     selectedNum = Number(option.innerHTML);
   });
 });
-let nameList = []; // 배열로 초기화
+//json에서 가져오기
+/* let nameList = []; // 배열로 초기화
 const filePath = "./data.json"; // 파일 경로는 적절히 수정해야 합니다.
-
 fetch(filePath)
   .then((response) => response.json())
   .then((data) => {
@@ -36,6 +37,8 @@ fetch(filePath)
     }
   })
   .catch((error) => console.error("Error:", error));
+ */
+
 /* 소스 */
 const listCount = nameList.length;
 const listNum = Array(listCount).fill("[]");
