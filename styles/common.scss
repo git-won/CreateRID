@@ -1,0 +1,21 @@
+#app {
+  .contents_tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    .tit {
+      font-size: 18px;
+      word-break: keep-all;
+      line-height: 24px;
+    }
+    .contents_tit_link {
+      margin-left: 40px;
+      font-size: 13px;
+      color: #666;
+      text-decoration: underline;
+      flex-shrink: 0;
+    }
+  
+  }
+}
